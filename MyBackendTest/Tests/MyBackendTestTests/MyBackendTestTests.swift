@@ -1,10 +1,10 @@
-@testable import MyBackend
+@testable import MyBackendTest
 import VaporTesting
 import Testing
 import Fluent
 
 @Suite("App Tests with DB", .serialized)
-struct MyBackendTests {
+struct MyBackendTestTests {
     private func withApp(_ test: (Application) async throws -> ()) async throws {
         let app = try await Application.make(.testing)
         do {

@@ -2,7 +2,7 @@
 import PackageDescription
 
 let package = Package(
-    name: "xcode",
+    name: "MyBackendTest",
     platforms: [
        .macOS(.v13)
     ],
@@ -18,7 +18,7 @@ let package = Package(
     ],
     targets: [
         .executableTarget(
-            name: "xcode",
+            name: "MyBackendTest",
             dependencies: [
                 .product(name: "Fluent", package: "fluent"),
                 .product(name: "FluentPostgresDriver", package: "fluent-postgres-driver"),
@@ -29,9 +29,9 @@ let package = Package(
             swiftSettings: swiftSettings
         ),
         .testTarget(
-            name: "xcodeTests",
+            name: "MyBackendTestTests",
             dependencies: [
-                .target(name: "xcode"),
+                .target(name: "MyBackendTest"),
                 .product(name: "VaporTesting", package: "vapor"),
             ],
             swiftSettings: swiftSettings
